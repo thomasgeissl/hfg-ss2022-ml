@@ -48,3 +48,35 @@ e.g. clustering
 
 e.g. AlphaGo
 
+## 1. Wekinator
+[Wekinator](http://www.wekinator.org/) is real-time, interactive machine learning tool developed by [Rebecca Fiebrink](https://www.doc.gold.ac.uk/~mas01rf/homepage/).
+Wekinator "just" does the machine learning task of a system. It does not sense, process or visualize data. Instead it makes use of the OSC protocol to receive and send data. Based on that incoming data, Wekinator trains a model, which then can be used to perform machine learning algorithms, such as classification or gesture recognition. 
+Wekinator acts as the brain of a machine learning system. Input and output has to be handled externally. 
+
+### OSC - Open Sound Control
+OSC is a network based communication protocol. It is build on top of the UPD protocol. Since UPD does not send an acknowledgement package, it is very fast, but data could be lost. OSC/UPD is very often used for time critical applications, such as musical software tools or interaction installations. 
+OSC is widely used and almost every creative coding frameworks either has direct support for OSC or offers libraries and plugins to communicate via OSC.
+* [processing: OSC P5](http://www.sojamo.de/libraries/oscP5/)
+* [openFrameworks: ofxOsc](https://github.com/openframeworks/openFrameworks/tree/master/addons/ofxOsc)
+* [arduino: CNMAT/OSC](https://github.com/CNMAT/OSC)
+
+[Protokol](https://hexler.net/protokol) is a cross platform OSC and MIDI monitor.
+[ofOSCDebugger](https://github.com/thomasgeissl/ofOSCDebugger) is a command line util that monitors and sends OSC messages, unfortunately it is Mac OS only.
+
+
+OSC runs typically on top of UPD, hence it is not suitable for browser applications. In very raw cases OSC can be sent on top of TCP or serial (SLIP encoding), but this is not very widely supported.
+
+### I/O
+Wekinator provides examples for camera, audio, mouse input, and many more. At the time of writing, some of them are already outdated, but it is relatively simple to write your own custom input and output software.
+A list of examples can be found [here](http://www.wekinator.org/examples/)
+
+### Algorithms
+Amongst others, Wekinator does classification, Regression, and dynamic time warping (gesture recognition) based on your custom trained models.
+
+### Tutorials
+* [getting started](https://www.youtube.com/watch?v=dPV-gCqy9j4)
+* [manual](http://www.wekinator.org/detailed-instructions/)
+* classification - [webcam drum machine](https://www.youtube.com/watch?v=NKyyBAKrQgE)
+* dynamic time warping - [mouse gesture recognition](https://www.youtube.com/watch?v=J4viXTThDTE)
+* [regression](https://www.youtube.com/watch?v=4lxGh0jQWBo)
+* more videos can be found on Wekinator's [youtube channel](https://www.youtube.com/channel/UCot7vfr_9hTy2qp3ksTxGmg/videos)
